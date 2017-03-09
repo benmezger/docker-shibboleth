@@ -16,4 +16,16 @@ services:
     container_name: "shibboleth-idp"
     entrypoint: /docker-entrypoint.sh
     env_file: ./shibboleth-idp/env.env
-
+    logging:
+      driver: "journald"
+  shibboleth-sp:
+    build:
+      context: ./shibboleth-sp
+    ports:
+      - "80:443"
+    volumes:
+      - "./shibboleth-sp/docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh"
+    container_name: "shibboleth-sp"
+    entrypoint: /usr/local/bin/docker-entrypoint.sh"
+    logging:
+      driver: "journald"
