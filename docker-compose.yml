@@ -10,7 +10,6 @@ services:
       - "./shibboleth-idp/confs:/opt/shibboleth-identity-provider-3.1.2/conf/"
       - "./shibboleth-idp/metadata:/opt/shibboleth-identity-provider-3.1.2/metadata/"
       - "./shibboleth-idp/credintials:/shibboleth-identity-provider-3.1.2/credintials/"
-      - "./shibboleth-idp/keystore:/shibboleth-identity-provider-3.1.2/keystore"
       - "./shibboleth-idp/docker-entrypoint.sh:/docker-entrypoint.sh"
       - "./shibboleth-idp/iam-jetty-base:/opt/iam-jetty-base/"
     container_name: "shibboleth-idp"
