@@ -25,6 +25,6 @@ services:
     volumes:
       - "./shibboleth-sp/docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh"
     container_name: "shibboleth-sp"
-    entrypoint: /usr/local/bin/docker-entrypoint.sh"
+    entrypoint: "/usr/local/bin/docker-entrypoint.sh"
     logging:
       driver: "journald"
