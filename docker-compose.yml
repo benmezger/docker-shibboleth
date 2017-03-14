@@ -28,3 +28,14 @@ services:
     entrypoint: "/usr/local/bin/docker-entrypoint.sh"
     logging:
       driver: "journald"
+  openldap:
+    build:
+      context: ./openldap
+    volumes:
+      - "./openldap/service:/container/service"
+      - "./openldap/environment:/container/environment/99-default"
+    ports:
+      - "389:389"
+      - "636:636"
+#   entrypoint: insert a entrypoint
+    container_name : "openldap"
