@@ -18,9 +18,10 @@ RUN set -x; \
 ENV JRE_HOME /opt/jre1.8.0_60
 ENV JAVA_HOME /opt/jre1.8.0_60
 ENV JETTY_HOME /opt/jetty
-ENV JETTY_BASE /opt/iam-jetty-base
 ENV JETTY_MAX_HEAP 512m
 ENV PATH $PATH:$JRE_HOME/bin
+
+COPY iam-jetty-base/ /opt/iam-jetty-base
 
 RUN set -x; \
     jetty_version=9.3.3.v20150827; \
@@ -30,11 +31,7 @@ RUN set -x; \
     && mv /opt/jetty-distribution-$jetty_version /opt/jetty \
     && rm jetty.zip \
     && cp /opt/jetty/bin/jetty.sh /etc/init.d/jetty \
-    && mkdir -p /opt/iam-jetty-base/modules \
-    && mkdir -p /opt/iam-jetty-base/lib/ext \
-    && mkdir -p /opt/iam-jetty-base/resources \
     && cd /opt/iam-jetty-base \
-    && touch start.ini \
     && $JRE_HOME/bin/java -jar ../jetty/start.jar --add-to-startd=http,https,deploy,ext,annotations,jstl,logging,setuid \
     && sed -i 's/# jetty.http.port=8080/jetty.http.port=80/g' /opt/iam-jetty-base/start.d/http.ini \
     && sed -i 's/# jetty.ssl.port=8443/jetty.ssl.port=443/g' /opt/iam-jetty-base/start.d/ssl.ini \
@@ -53,10 +50,10 @@ RUN set -x; \
     && echo "0c6747b28b1f76eb6fd1a1f2b9fce99c70e70be2e9ef0099f84a006673123027  shibboleth-identity-provider-$shibidp_version.zip" | sha256sum -c - \
     && unzip shibboleth-identity-provider-$shibidp_version.zip -d /opt \
     && cd /opt/shibboleth-identity-provider-$shibidp_version/ \
-    && bin/install.sh -Didp.keystore.password=CHANGEME -Didp.sealer.password=CHANGEME -Didp.host.name=localhost.localdomain \
+    && bin/install.sh -Didp.keystore.password=dockeridp -Didp.sealer.password=dockeridp -Didp.host.name=sp2-openam.gidlab.rnp.br \
     && cd / \
     && chmod -R +r /opt/shibboleth-idp/ \
-    && sed -i 's/ password/CHANGEME/g' /opt/shibboleth-idp/conf/idp.properties \
+    && sed -i 's/ password/dockeridp/g' /opt/shibboleth-idp/conf/idp.properties \
     && rm -r /shibboleth-identity-provider-$shibidp_version.zip /opt/shibboleth-identity-provider-$shibidp_version/
 
 # Download the library to allow SOAP Endpoints, verify the hash, and place

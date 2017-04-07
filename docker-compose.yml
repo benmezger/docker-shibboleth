@@ -5,15 +5,13 @@ services:
       context: ./shibboleth-idp
     ports:
       - "443:443"
-      - "8443:8443"
+      - "80:80"
     volumes:
-      - "./shibboleth-idp/confs:/opt/shibboleth-identity-provider-3.1.2/conf/"
-      - "./shibboleth-idp/metadata:/opt/shibboleth-identity-provider-3.1.2/metadata/"
-      - "./shibboleth-idp/credintials:/shibboleth-identity-provider-3.1.2/credintials/"
+      - "./shibboleth-idp/confs:/opt/shibboleth-idp/conf/"
+      - "./shibboleth-idp/metadata:/opt/shibboleth-idp/metadata/"
       - "./shibboleth-idp/docker-entrypoint.sh:/docker-entrypoint.sh"
-      - "./shibboleth-idp/iam-jetty-base:/opt/iam-jetty-base/"
     container_name: "shibboleth-idp"
-    entrypoint: /docker-entrypoint.sh
+    entrypoint: ./docker-entrypoint.sh
     env_file: ./shibboleth-idp/env.env
     logging:
       driver: "journald"
