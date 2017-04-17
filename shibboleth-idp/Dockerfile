@@ -50,10 +50,10 @@ RUN set -x; \
     && echo "0c6747b28b1f76eb6fd1a1f2b9fce99c70e70be2e9ef0099f84a006673123027  shibboleth-identity-provider-$shibidp_version.zip" | sha256sum -c - \
     && unzip shibboleth-identity-provider-$shibidp_version.zip -d /opt \
     && cd /opt/shibboleth-identity-provider-$shibidp_version/ \
-    && bin/install.sh -Didp.keystore.password=dockeridp -Didp.sealer.password=dockeridp -Didp.host.name=sp2-openam.gidlab.rnp.br \
+    && bin/install.sh -Didp.keystore.password={{ keystore_pwd }} -Didp.sealer.password={{ sealer_pwd }} -Didp.host.name={{ hostname }} \
     && cd / \
     && chmod -R +r /opt/shibboleth-idp/ \
-    && sed -i 's/ password/dockeridp/g' /opt/shibboleth-idp/conf/idp.properties \
+    && sed -i 's/ password/{{ keystore_pwd }}/g' /opt/shibboleth-idp/conf/idp.properties \
     && rm -r /shibboleth-identity-provider-$shibidp_version.zip /opt/shibboleth-identity-provider-$shibidp_version/
 
 # Download the library to allow SOAP Endpoints, verify the hash, and place
