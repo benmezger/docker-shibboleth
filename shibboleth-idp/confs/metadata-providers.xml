@@ -70,7 +70,8 @@
          to know that the file is valid.
          
 
-    <MetadataProvider id="LocalMetadata"  xsi:type="FilesystemMetadataProvider" metadataFile="PATH_TO_YOUR_METADATA"/>
+    <MetadataProvider id="LocalMetadata"  xsi:type="FilesystemMetadataProvider" metadataFile="{{ idp_metadata }}"/>
+    <MetadataProvider id="LocalMetadata"  xsi:type="FilesystemMetadataProvider" metadataFile="{{ sp_metadata }}"/>
 
      -->
           
