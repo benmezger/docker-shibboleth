@@ -7,12 +7,12 @@
 # more information : https://github.com/osixia/docker-light-baseimage
 
 # Required and used for new ldap server only
-LDAP_ORGANISATION: Example Inc.
-LDAP_DOMAIN: example.org
+LDAP_ORGANISATION: {{ ldap_organization }}
+LDAP_DOMAIN: {{ ldap_domain }}
 LDAP_BASE_DN: #if empty automatically set from LDAP_DOMAIN
 
-LDAP_ADMIN_PASSWORD: admin
-LDAP_CONFIG_PASSWORD: config
+LDAP_ADMIN_PASSWORD: {{ ldap_admin_pwd }}
+LDAP_CONFIG_PASSWORD: {{ ldap_config_pwd }}
 
 LDAP_READONLY_USER: false
 LDAP_READONLY_USER_USERNAME: readonly
@@ -23,9 +23,9 @@ LDAP_BACKEND: hdb
 
 # Tls
 LDAP_TLS: true
-LDAP_TLS_CRT_FILENAME: ldap.crt
-LDAP_TLS_KEY_FILENAME: ldap.key
-LDAP_TLS_CA_CRT_FILENAME: ca.crt
+LDAP_TLS_CRT_FILENAME: {{ ldap_path_to_tls_cert }}
+LDAP_TLS_KEY_FILENAME: {{ ldap_path_to_key }}
+LDAP_TLS_CA_CRT_FILENAME: {{ ldap_path_to_ca_cert }}
 
 LDAP_TLS_ENFORCE: false
 LDAP_TLS_CIPHER_SUITE: SECURE256:+SECURE128:-VERS-TLS-ALL:+VERS-TLS1.2:-RSA:-DHE-DSS:-CAMELLIA-128-CBC:-CAMELLIA-256-CBC
