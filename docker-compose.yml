@@ -1,37 +1,37 @@
 version: '2'
 services:
   shibboleth-idp:
-    build: 
-      context: ./shibboleth-idp
+    build:
+      context: ./idp
     ports:
       - "443:443"
       - "80:80"
     volumes:
-      - "./shibboleth-idp/confs:/opt/shibboleth-idp/conf/"
-      - "./shibboleth-idp/metadata:/opt/shibboleth-idp/metadata/"
-      - "./shibboleth-idp/docker-entrypoint.sh:/docker-entrypoint.sh"
+      - "./idp/confs:/opt/shibboleth-idp/conf/"
+      - "./idp/metadata:/opt/shibboleth-idp/metadata/"
+      - "./idp/docker-entrypoint.sh:/docker-entrypoint.sh"
     container_name: "shibboleth-idp"
     entrypoint: ./docker-entrypoint.sh
-    env_file: ./shibboleth-idp/env.env
+    env_file: ./idp/env.env
     logging:
       driver: "journald"
   shibboleth-sp:
     build:
-      context: ./shibboleth-sp
+      context: ./sp
     ports:
       - "80:443"
     volumes:
-      - "./shibboleth-sp/docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh"
+      - "./sp/docker-entrypoint.sh:/usr/local/bin/docker-entrypoint.sh"
     container_name: "shibboleth-sp"
     entrypoint: "/usr/local/bin/docker-entrypoint.sh"
     logging:
       driver: "journald"
   openldap:
     build:
-      context: ./openldap
+      context: ./ldap
     volumes:
-      - "./openldap/service:/container/service"
-      - "./openldap/environment:/container/environment/99-default"
+      - "./ldap/service:/container/service"
+      - "./ldap/environment:/container/environment/99-default"
     ports:
       - "389:389"
       - "636:636"
