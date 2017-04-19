@@ -24,6 +24,6 @@ RootDNPwd = dockerldap
 ServerIdentifier = dir
 ServerPort = 389
 SlapdConfigForMC = yes
-Suffix = dc=sp2-openam, dc=gidlab, dc=rnp, dc=br
+Suffix = dc=gidlab, dc=rnp, dc=br
 UseExistingMC = No
-SchemaFile=/external/breduperson.0.0.6.schema
+SchemaFile=/external/breduperson.schema

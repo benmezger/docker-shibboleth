@@ -9,6 +9,9 @@ RUN yum install -y epel-release \
 
 COPY ds-setup.inf /ds-setup.inf
 COPY users.ldif /users.ldif
+RUN cd / \
+    mkdir external
+COPY files/breduperson.schema /external/breduperson.schema
 
 # The 389-ds setup will fail because the hostname can't reliable be determined, so we'll bypass it and then install.
 RUN useradd ldapadmin \
