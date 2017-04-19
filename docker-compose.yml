@@ -1,0 +1,35 @@
+version: '2'
+services:
+
+  idp:
+    container_name: "idp"
+
+    build: 
+      context: ./idp
+
+    volumes:
+      - "./idp/metadata:/opt/shibboleth-idp/metadata"
+      - "./idp/conf:/opt/shibboleth-idp/conf"
+      - "./idp/docker-entrypoint.sh:/docker-entrypoint.sh"
+
+
+    entrypoint: ./docker-entrypoint.sh
+
+    env_file: ./idp/file.env
+
+    ports:
+      - "443:8443"
+
+    links:
+      - ldap
+  
+
+  ldap:
+    container_name : "ldap"
+
+    build:
+      context: ./ldap
+
+    ports:
+      - "389:389"
+

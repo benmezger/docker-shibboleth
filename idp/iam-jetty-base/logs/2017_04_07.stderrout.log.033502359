@@ -1,0 +1,3 @@
+2017-04-07 03:34:31.594:INFO:oejs.Server:main: jetty-9.3.3.v20150827
+2017-04-07 03:34:31.691:INFO:oejs.AbstractNCSARequestLog:main: Opened /opt/iam-jetty-base/logs/2017_04_07.request.log
+2017-04-07 03:34:31.699:INFO:oejdp.ScanningAppProvider:main: Deployment monitor [file:///opt/iam-jetty-base/webapps/] at interval 1

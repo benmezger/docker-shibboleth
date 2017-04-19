@@ -1,0 +1,32 @@
+<SPConfig xmlns="urn:mace:shibboleth:sp:config:2.0"
+    xmlns:conf="urn:mace:shibboleth:sp:config:2.0"
+    xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+    logger="shibboleth/syslog.logger" clockSkew="180">
+ 
+    <Extensions/>
+ 
+    <OutOfProcess/>
+ 
+    <InProcess/>
+ 
+    <Listener/>
+ 
+    <StorageService/>
+    <SessionCache/>
+    <ReplayCache/>
+    <ArtifactMap/>
+ 
+    <RequestMapper/>   
+ 
+    <ApplicationDefaults id="default" policyId="default"
+        entityID="https://sp2-openam.gidlab.rnp.brg/shibboleth"
+        homeURL="https://sp2-openam.gidlab.rnp.br/index.html"/>
+ 
+    <SecurityPolicies/> <!-- Earlier Releases -->
+    <SecurityPolicyProvider/> <!-- 2.4 and Above -->
+ 
+    <ProtocolProvider/> <!-- 2.4 and Above -->
+ 
+    <ds:Signature/> <!-- 2.4 and Above -->
+ 
+</SPConfig>

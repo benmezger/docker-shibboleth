@@ -1,0 +1,30 @@
+dn: cn=admin, dc=sp2-openam, dc=gidlab, dc=rnp, dc=br
+objectClass: simpleSecurityObject
+objectClass: organizationalRole
+cn: admin
+userPassword: admin
+description: LDAP administrator
+
+dn: uid=student1,ou=people,dc=sp2-openam, dc=gidlab, dc=rnp, dc=br
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: Stud
+uid: student1
+sn: Ent
+cn: Stud Ent
+mail: student1@jubarte.edu
+userPassword: password
+
+dn: uid=staff1,ou=people,dc=sp2-openam, dc=gidlab, dc=rnp, dc=br
+objectClass: organizationalPerson
+objectClass: person
+objectClass: top
+objectClass: inetOrgPerson
+givenName: St
+uid: staff1
+sn: aff
+cn: St aff
+mail: staff1@jubart.edu
+userPassword: password
