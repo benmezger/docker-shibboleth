@@ -34,7 +34,7 @@ RUN set -x; \
     && cd /opt/iam-jetty-base \
     && $JRE_HOME/bin/java -jar ../jetty/start.jar --add-to-startd=http,https,deploy,ext,annotations,jstl,logging,setuid \
     && sed -i 's/# jetty.http.port=8080/jetty.http.port=80/g' /opt/iam-jetty-base/start.d/http.ini \
-    && sed -i 's/# jetty.ssl.port=8443/jetty.ssl.port=443/g' /opt/iam-jetty-base/start.d/ssl.ini \
+    && sed -i 's/# jetty.ssl.port=8443/jetty.ssl.port={{ idp_port }}/g' /opt/iam-jetty-base/start.d/ssl.ini \
     && sed -i 's/<New id="DefaultHandler" class="org.eclipse.jetty.server.handler.DefaultHandler"\/>/<New id="DefaultHandler" class="org.eclipse.jetty.server.handler.DefaultHandler"><Set name="showContexts">false<\/Set><\/New>/g' /opt/jetty/etc/jetty.xml
 
 # Download setuid, verify the hash, and place
