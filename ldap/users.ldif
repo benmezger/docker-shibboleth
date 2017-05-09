@@ -1,30 +1,421 @@
-dn: cn=admin, dc=sp2-openam, dc=gidlab, dc=rnp, dc=br
-objectClass: simpleSecurityObject
-objectClass: organizationalRole
-cn: admin
-userPassword: admin
-description: LDAP administrator
-
-dn: uid=student1,ou=people,dc=sp2-openam, dc=gidlab, dc=rnp, dc=br
-objectClass: organizationalPerson
+## Aluno
+dn: uid=aluno,dc=gidlab,dc=rnp,dc=br
 objectClass: person
-objectClass: top
 objectClass: inetOrgPerson
-givenName: Stud
-uid: student1
-sn: Ent
-cn: Stud Ent
-mail: student1@jubarte.edu
-userPassword: password
+objectClass: brPerson
+objectClass: schacPersonalCharacteristics
+uid: aluno
+userPassword: aluno@idp
+cn: Aluno
+cn: Aluno GIdLab
+sn: GIdLab
+mail: aluno@idp.gidlab.rnp.br
+homePostalAddress: Rua Servidão dos Anjos, 145, Capoeiras, Florianópolis, Santa Catarina
+schacCountryOfCitizenship: BR
+schacDateOfBirth: 19911014
+schacGender: 1
+#telephoneNumber: +55 22 81389199
 
-dn: uid=staff1,ou=people,dc=sp2-openam, dc=gidlab, dc=rnp, dc=br
-objectClass: organizationalPerson
+dn: brEduAffiliation=1,uid=aluno,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduPerson
+braff: 1
+brafftype: student
+brentr: 20090727
+
+dn: brEduVoIPPhone=1,uid=aluno,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduVoIP
+brvoipadmin: uid=administrador,dc=gidlab,dc=rnp,dc=br
+brvoipalias: 2345
+brvoipphone: 1
+brvoiptype: pstn
+brvoipaddr: 10.0.0.1
+brvoipfwr: +55 22 3418 9199
+brvoipbalance: 295340
+brvoipcredit: 300000
+brvoipexpiry: 20200202
+
+dn: brBiometricSource=left-middle,uid=aluno,dc=gidlab,dc=rnp,dc=br
+objectClass: brBiometricData
+brbiodata:: Jyc=
+brbiosrc: left-middle
+brcapt: 20090727
+
+
+
+## Aluna
+dn: uid=aluna,dc=gidlab,dc=rnp,dc=br
 objectClass: person
-objectClass: top
 objectClass: inetOrgPerson
-givenName: St
-uid: staff1
-sn: aff
-cn: St aff
-mail: staff1@jubart.edu
-userPassword: password
+objectClass: brPerson
+objectClass: schacPersonalCharacteristics
+uid: aluna
+userPassword: aluna@idp
+cn: Aluna
+cn: Aluna GIdLab
+sn: GIdLab
+mail: aluna@idp.gidlab.rnp.br
+homePostalAddress: Rua Servidão dos Anjos, 145, Capoeiras, Florianópolis, Santa Catarina
+schacCountryOfCitizenship: BR
+schacDateOfBirth: 19930123
+schacGender: 2
+#telephoneNumber: +55 22 81389199
+
+dn: brEduAffiliation=1,uid=aluna,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduPerson
+braff: 1
+brafftype: student
+brentr: 20100714
+
+dn: brEduVoIPPhone=1,uid=aluna,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduVoIP
+brvoipadmin: uid=administrador,dc=gidlab,dc=rnp,dc=br
+brvoipalias: 2345
+brvoipphone: 1
+brvoiptype: pstn
+brvoipaddr: 10.0.0.1
+brvoipfwr: +55 22 3418 9199
+brvoipbalance: 295340
+brvoipcredit: 300000
+brvoipexpiry: 20200202
+
+dn: brBiometricSource=left-middle,uid=aluna,dc=gidlab,dc=rnp,dc=br
+objectClass: brBiometricData
+brbiodata:: Jyc=
+brbiosrc: left-middle
+brcapt: 20100714
+
+
+
+
+## Aluno regresso
+dn: uid=aluno.egresso,dc=gidlab,dc=rnp,dc=br
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: brPerson
+objectClass: schacPersonalCharacteristics
+uid: aluno.egresso
+userPassword: aluno.egresso@idp
+cn: Aluno
+cn: Aluno Egresso
+sn: Egresso
+mail: aluno.egresso@idp.gidlab.rnp.br
+homePostalAddress: Rua Servidão dos Anjos, 145, Capoeiras, Florianópolis, Santa Catarina
+schacCountryOfCitizenship: BR
+schacDateOfBirth: 19890123
+schacGender: 1
+#telephoneNumber: +55 22 81389199
+
+dn: brEduAffiliation=1,uid=aluno.egresso,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduPerson
+braff: 1
+brafftype: student
+brentr: 20060727
+brexit: 20110921
+
+dn: brEduVoIPPhone=1,uid=aluno.egresso,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduVoIP
+brvoipadmin: uid=administrador,dc=gidlab,dc=rnp,dc=br
+brvoipalias: 2345
+brvoipphone: 1
+brvoiptype: pstn
+brvoipaddr: 10.0.0.1
+brvoipfwr: +55 22 3418 9199
+brvoipbalance: 295340
+brvoipcredit: 300000
+brvoipexpiry: 20110921
+
+dn: brBiometricSource=left-middle,uid=aluno.egresso,dc=gidlab,dc=rnp,dc=br
+objectClass: brBiometricData
+brbiodata:: Jyc=
+brbiosrc: left-middle
+brcapt: 20060727
+
+
+
+
+## Funcionaria Aluna
+dn: uid=func.aluna,dc=gidlab,dc=rnp,dc=br
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: brPerson
+objectClass: schacPersonalCharacteristics
+uid: func.aluna
+userPassword: func.aluna@idp
+cn: Funcionária
+cn: Funcionária Aluna
+sn: Aluna
+mail: func.aluna@idp.gidlab.rnp.br
+homePostalAddress: Rua Servidão dos Anjos, 145, Capoeiras, Florianópolis, Santa Catarina
+schacCountryOfCitizenship: BR
+schacDateOfBirth: 19860421
+schacGender: 2
+telephoneNumber: +55 22 81389199
+
+dn: brEduAffiliation=1,uid=func.aluna,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduPerson
+braff: 1
+brafftype: employee
+brentr: 20100312
+
+
+# Opcional, pode ter mais de um registro para brAffiliation
+dn: brEduAffiliation=2,uid=func.aluna,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduPerson
+braff: 2
+brafftype: student
+brentr: 20130201
+brexit: 20150201
+
+dn: brEduVoIPPhone=1,uid=func.aluna,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduVoIP
+brvoipadmin: uid=administrador,dc=gidlab,dc=rnp,dc=br
+brvoipalias: 2345
+brvoipphone: 1
+brvoiptype: pstn
+brvoipaddr: 10.0.0.1
+brvoipfwr: +55 22 3418 9199
+brvoipbalance: 295340
+brvoipcredit: 300000
+brvoipexpiry: 20200202
+
+dn: brBiometricSource=left-middle,uid=func.aluna,dc=gidlab,dc=rnp,dc=br
+objectClass: brBiometricData
+brbiodata:: Jyc=
+brbiosrc: left-middle
+brcapt: 20130201
+
+
+
+
+## Funcionario ex-aluno
+dn: uid=func.exaluno,dc=gidlab,dc=rnp,dc=br
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: brPerson
+objectClass: schacPersonalCharacteristics
+uid: func.exaluno
+userPassword: func.exaluno@idp
+cn: Funcionário
+cn: Funcionário Ex-aluno
+sn: Ex-aluno
+mail: func.exaluno@idp.gidlab.rnp.br
+homePostalAddress: Rua Servidão dos Anjos, 145, Capoeiras, Florianópolis, Santa Catarina
+schacCountryOfCitizenship: BR
+schacDateOfBirth: 19809421
+schacGender: 1
+telephoneNumber: +55 22 81389199
+
+dn: brEduAffiliation=1,uid=func.exaluno,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduPerson
+braff: 1
+brafftype: student
+brentr: 19980312
+
+# Opcional, pode ter mais de um registro para brAffiliation
+dn: brEduAffiliation=2,uid=func.exaluno,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduPerson
+braff: 2
+brafftype: student
+brentr: 20010310
+brexit: 20050729
+
+dn: brEduVoIPPhone=1,uid=func.exaluno,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduVoIP
+brvoipadmin: uid=administrador,dc=gidlab,dc=rnp,dc=br
+brvoipalias: 2345
+brvoipphone: 1
+brvoiptype: pstn
+brvoipaddr: 10.0.0.1
+brvoipfwr: +55 22 3418 9199
+brvoipbalance: 295340
+brvoipcredit: 300000
+brvoipexpiry: 20200202
+
+dn: brBiometricSource=left-middle,uid=func.exaluno,dc=gidlab,dc=rnp,dc=br
+objectClass: brBiometricData
+brbiodata:: Jyc=
+brbiosrc: left-middle
+brcapt: 20010310
+
+
+
+
+## Aluna Mestrado
+dn: uid=aluna.mestrado,dc=gidlab,dc=rnp,dc=br
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: brPerson
+objectClass: schacPersonalCharacteristics
+uid: aluna.mestrado
+userPassword: aluna.mestrado@idp
+cn: Aluna
+cn: Aluna do Mestrado
+sn: Mestrado
+mail: aluna.mestrado@idp.gidlab.rnp.br
+homePostalAddress: Rua Servidão dos Anjos, 145, Capoeiras, Florianópolis, Santa Catarina
+schacCountryOfCitizenship: BR
+schacDateOfBirth: 19900318
+schacGender: 2
+telephoneNumber: +55 22 81389199
+
+dn: brEduAffiliation=1,uid=aluna.mestrado,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduPerson
+braff: 1
+brafftype: scholarshipAwardee
+brentr: 20140806
+
+dn: brEduVoIPPhone=1,uid=aluna.mestrado,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduVoIP
+brvoipadmin: uid=administrador,dc=gidlab,dc=rnp,dc=br
+brvoipalias: 2345
+brvoipphone: 1
+brvoiptype: pstn
+brvoipaddr: 10.0.0.1
+brvoipfwr: +55 22 3418 9199
+brvoipbalance: 295340
+brvoipcredit: 300000
+brvoipexpiry: 20200202
+
+dn: brBiometricSource=left-middle,uid=aluna.mestrado,dc=gidlab,dc=rnp,dc=br
+objectClass: brBiometricData
+brbiodata:: Jyc=
+brbiosrc: left-middle
+brcapt: 20140806
+
+
+
+
+## Professor
+dn: uid=professor,dc=gidlab,dc=rnp,dc=br
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: brPerson
+objectClass: schacPersonalCharacteristics
+uid: professor
+userPassword: professor@idp
+cn: Professor
+cn: Professor GIdLab
+sn: GIdLab
+mail: professor@idp.gidlab.rnp.br
+homePostalAddress: Rua Servidão dos Anjos, 145, Capoeiras, Florianópolis, Santa Catarina
+schacCountryOfCitizenship: BR
+schacDateOfBirth: 19850301
+schacGender: 1
+telephoneNumber: +55 22 81389199
+
+dn: brEduAffiliation=1,uid=professor,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduPerson
+braff: 1
+brafftype: faculty
+brentr: 20000301
+
+dn: brEduVoIPPhone=1,uid=professor,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduVoIP
+brvoipadmin: uid=administrador,dc=gidlab,dc=rnp,dc=br
+brvoipalias: 2345
+brvoipphone: 1
+brvoiptype: pstn
+brvoipaddr: 10.0.0.1
+brvoipfwr: +55 22 3418 9199
+brvoipbalance: 295340
+brvoipcredit: 300000
+brvoipexpiry: 20200202
+
+# Opcional, pode ter mais de um registro para VoIP
+dn: brEduVoIPPhone=2,uid=professor,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduVoIP
+brvoipadmin: uid=administrador,dc=gidlab,dc=rnp,dc=br
+brvoipalias: 2346
+brvoipphone: 2
+brvoiptype: celular
+brvoipaddr: 10.0.0.2
+brvoipfwr: +55 48 3234 5678
+brvoipbalance: 295340
+brvoipcredit: 300000
+brvoipexpiry: 20200202
+
+
+dn: brBiometricSource=left-middle,uid=professor,dc=gidlab,dc=rnp,dc=br
+objectClass: brBiometricData
+brbiodata:: Jyc=
+brbiosrc: left-middle
+brcapt: 20000301
+
+
+
+
+# Professora coordenandora
+dn: uid=professora.coord,dc=gidlab,dc=rnp,dc=br
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: brPerson
+objectClass: schacPersonalCharacteristics
+uid: professora.coord
+userPassword: professora.coord@idp
+cn: Professora
+cn: Professora Coordenadora
+sn: Coordenadora
+mail: professora.coord@idp.gidlab.rnp.br
+homePostalAddress: Rua Servidão dos Anjos, 145, Capoeiras, Florianópolis, Santa Catarina
+schacCountryOfCitizenship: BR
+schacDateOfBirth: 19810301
+schacGender: 2
+telephoneNumber: +55 22 81389199
+
+dn: brEduAffiliation=1,uid=professora.coord,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduPerson
+braff: 1
+brafftype: faculty
+brentr: 20000301
+
+# Opcional, pode ter mais de um registro para brAffiliation
+dn: brEduAffiliation=2,uid=professora.coord,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduPerson
+braff: 2
+brafftype: position
+brentr: 20110301
+
+dn: brEduVoIPPhone=1,uid=professora.coord,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduVoIP
+brvoipadmin: uid=administrador,dc=gidlab,dc=rnp,dc=br
+brvoipalias: 2345
+brvoipphone: 1
+brvoiptype: pstn
+brvoipaddr: 10.0.0.1
+brvoipfwr: +55 22 3418 9199
+brvoipbalance: 295340
+brvoipcredit: 300000
+brvoipexpiry: 20200202
+
+dn: brBiometricSource=left-middle,uid=professora.coord,dc=gidlab,dc=rnp,dc=br
+objectClass: brBiometricData
+brbiodata:: Jyc=
+brbiosrc: left-middle
+brcapt: 20000301
+
+
+
+
+## Aluno
+dn: uid=teste,dc=gidlab,dc=rnp,dc=br
+objectClass: person
+objectClass: inetOrgPerson
+objectClass: brPerson
+objectClass: schacPersonalCharacteristics
+uid: teste-ldap
+userPassword: teste
+cn: Usuario
+cn: Usuario Teste
+sn: Teste
+mail: teste@idp.gidlab.rnp.br
+homePostalAddress: Rua Servidão dos Anjos, 145, Capoeiras, Florianópolis, Santa Catarina
+schacCountryOfCitizenship: BR
+schacDateOfBirth: 19911014
+schacGender: 1
+#telephoneNumber: +55 22 81389199
+
+dn: brEduAffiliation=1,uid=teste,dc=gidlab,dc=rnp,dc=br
+objectClass: brEduPerson
+braff: 1
+brafftype: student
+brentr: 20090727
