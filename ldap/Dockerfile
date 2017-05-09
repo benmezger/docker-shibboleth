@@ -9,9 +9,12 @@ RUN yum install -y epel-release \
 
 COPY ds-setup.inf /ds-setup.inf
 COPY users.ldif /users.ldif
+
 RUN cd / \
     mkdir external
-COPY files/breduperson.schema /external/breduperson.schema
+COPY files/eduperson.schema /external/eduperson.schema
+COPY files/breduperson.0.0.6.schema /external/breduperson.0.0.6.schema
+COPY files/schac-20061212-1.3.0 /external/schac-20061212-1.3.0
 
 # The 389-ds setup will fail because the hostname can't reliable be determined, so we'll bypass it and then install.
 RUN useradd ldapadmin \

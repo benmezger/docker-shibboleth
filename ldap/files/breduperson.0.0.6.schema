@@ -1,4 +1,3 @@
-
 #----------------------------------------------------------------------
 #
 # Definicao do esquema brEduPerson
@@ -15,10 +14,10 @@
 # Changelog
 #
 # 20080917 - 0.0.6
-# 	   - Alteracao do atributo brEduAffiliation
+#          - Alteracao do atributo brEduAffiliation
 # 20080911 - 0.0.5
-# 	   - Inclusao do atributo brEduVoIPphone
-# 	   - Alteracao da classe brEduVoIP para incluir o atributo brEduVoIPphone
+#          - Inclusao do atributo brEduVoIPphone
+#          - Alteracao da classe brEduVoIP para incluir o atributo brEduVoIPphone
 # 20080714 - 0.0.4
 #          - Exclusao do atributo brEduPersonUniqueId
 #          - Exclusao do atributo brRelatedIdentification
@@ -47,7 +46,7 @@ attributetype ( 1.3.6.1.4.1.15996.100.1.1.1.1
 
 # brPersonPassport
 # Descrip: Documento emitido por um governo nacional.
-#		O valor desse atributo é complementado pela informação no atributo ``país de cidadania''.
+# O valor desse atributo é complementado pela informação no atributo ``país de cidadania''.
 # Format: Free string.
 # Example: brpassport: 1234456ZF
 attributetype ( 1.3.6.1.4.1.15996.100.1.1.1.2 
@@ -117,7 +116,7 @@ attributetype ( 1.3.6.1.4.1.15996.100.1.1.3.1
 # Descrip: Representa uma fonte biometrica da pessoa.
 # Format: Free string.
 # Common values: left-thumb, left-index, left-middle, left-ring, left-little, 
-#		right-thumb, right-index, right-middle, right-ring, right-little.
+# right-thumb, right-index, right-middle, right-ring, right-little.
 # Example: brbiosrc: left-middle
 attributetype ( 1.3.6.1.4.1.15996.100.1.1.3.2
     NAME ( 'brBiometricSource' 'brbiosrc')
@@ -188,8 +187,8 @@ attributetype ( 1.3.6.1.4.1.15996.100.1.1.4.5
 
 # brEduVoIPexpiryDate
 # Descrip: Ao atribuir um telefone IP, o administrador pode determinar uma data de expiracao para a atribuicao.
-#		A existencia desse campo com data anterior a data atual identifica uma conta obsoleta.
-#		Caso o campo nao exista ou contenha data posterior a atual, supoe-se que a conta esteja ativa.
+# A existencia desse campo com data anterior a data atual identifica uma conta obsoleta.
+# Caso o campo nao exista ou contenha data posterior a atual, supoe-se que a conta esteja ativa.
 # Format: Numeric value YYYYMMDD, using 4 digits for year, 2 digits
 #          for month and 2 digits for day as described in RFC 3339.
 # Example: brvoipexpiry: 20060509
@@ -268,3 +267,5 @@ objectclass ( 1.3.6.1.4.1.15996.100.1.2.4
     STRUCTURAL
     MUST ( brvoipphone $ brvoipalias $  brvoiptype $  brvoipadmin )
     MAY (  brvoipfwr $  brvoipaddr $  brvoipexpiry $  brvoipbalance $  brvoipcredit ) )
+
+

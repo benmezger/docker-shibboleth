@@ -26,4 +26,6 @@ ServerPort = 389
 SlapdConfigForMC = yes
 Suffix = dc=gidlab, dc=rnp, dc=br
 UseExistingMC = No
-SchemaFile=/external/breduperson.schema
+SchemaFile=/external/eduperson.schema
+SchemaFile=/external/breduperson.0.0.6.schema
+SchemaFile=/external/schac-20061212-1.3.0
