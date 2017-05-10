@@ -21,7 +21,7 @@ services:
       - "443:8443"
 
     links:
-      - ldap
+      - openldap
   
 
   ldap:
@@ -32,3 +32,13 @@ services:
 
     ports:
       - "389:389"
+
+  openldap:
+    container_name : "openldap"
+    
+    build:
+      context: ./openldap
+
+    ports:
+      - "389:389"
+
