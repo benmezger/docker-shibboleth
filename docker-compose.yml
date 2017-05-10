@@ -27,12 +27,8 @@ services:
   ldap:
     container_name : "ldap"
 
-    volumes:
-      - "./ldap/files:/external"
-
     build:
       context: ./ldap
 
     ports:
       - "389:389"
-

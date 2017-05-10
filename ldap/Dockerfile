@@ -10,11 +10,11 @@ RUN yum install -y epel-release \
 COPY ds-setup.inf /ds-setup.inf
 COPY users.ldif /users.ldif
 
-RUN cd / \
-    mkdir external
+RUN  mkdir /external
 COPY files/eduperson.schema /external/eduperson.schema
 COPY files/breduperson.0.0.6.schema /external/breduperson.0.0.6.schema
 COPY files/schac-20061212-1.3.0 /external/schac-20061212-1.3.0
+
 
 # The 389-ds setup will fail because the hostname can't reliable be determined, so we'll bypass it and then install.
 RUN useradd ldapadmin \
@@ -28,6 +28,9 @@ RUN useradd ldapadmin \
     && setup-ds.pl --silent --file /ds-setup.inf \
     && /usr/sbin/ns-slapd -D /etc/dirsrv/slapd-dir \
     && sleep 3 \
+    && ldapadd -H ldap:/// -f /external/eduperson.schema -x -D "cn=Directory Manager" -w dockerldap \
+    && ldapadd -H ldap:/// -f /external/breduperson.0.0.6.schema -x -D "cn=Directory Manager" -w dockerldap\
+    && ldapadd -H ldap:/// -f /external/schac-20061212-1.3.0 -x -D "cn=Directory Manager" -w dockerldap \
     && ldapadd -H ldap:/// -f /users.ldif -x -D "cn=Directory Manager" -w dockerldap
 
 EXPOSE 389
