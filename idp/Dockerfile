@@ -20,8 +20,8 @@ ENV JAVA_HOME /opt/jre1.8.0_60
 ENV JETTY_HOME /opt/jetty
 ENV JETTY_MAX_HEAP 512m
 ENV PATH $PATH:$JRE_HOME/bin
-ENV JETTY_BROWSER_SSL_KEYSTORE_PASSWORD=dockeridp
-ENV JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD=dockeridp
+ENV JETTY_BROWSER_SSL_KEYSTORE_PASSWORD=admin@cafeexpresso
+ENV JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD=admin@cafeexpresso
 
 COPY iam-jetty-base/ /opt/iam-jetty-base
 
@@ -52,7 +52,7 @@ RUN set -x; \
     && echo "0c6747b28b1f76eb6fd1a1f2b9fce99c70e70be2e9ef0099f84a006673123027  shibboleth-identity-provider-$shibidp_version.zip" | sha256sum -c - \
     && unzip shibboleth-identity-provider-$shibidp_version.zip -d /opt \
     && cd /opt/shibboleth-identity-provider-$shibidp_version/ \
-    && bin/install.sh -Didp.keystore.password=dockeridp -Didp.sealer.password=dockeridp -Didp.host.name=sp2-openam.gidlab.rnp.br -Didp.target.dir=/opt/shibboleth-idp -Didp.entityID=https://sp2-openam.gidlab.rnp.br/idp/shibboleth \
+    && bin/install.sh -Didp.keystore.password=admin@cafeexpresso -Didp.sealer.password=admin@cafeexpresso -Didp.host.name=sp1-openam.gidlab.rnp.br -Didp.target.dir=/opt/shibboleth-idp -Didp.entityID=https://sp1-openam.gidlab.rnp.br/idp/shibboleth \
     && cd / \
     && chmod -R +r /opt/shibboleth-idp/ \
     && rm -r /shibboleth-identity-provider-$shibidp_version.zip /opt/shibboleth-identity-provider-$shibidp_version/
@@ -63,10 +63,6 @@ RUN set -x; \
     && echo "2f547074b06952b94c35631398f36746820a7697  jetty9-dta-ssl-1.0.0.jar" | sha1sum -c - \
     && mv jetty9-dta-ssl-1.0.0.jar /opt/iam-jetty-base/lib/ext/
 
-#RUN rm /opt/shibboleth-idp/webapp/index.jsp
-
-#COPY webapp/index.jsp /opt/shibboleth-idp/webapp/index.jsp
-#COPY webapp/images/ /opt/shibboleth-idp/webapp/images
 
 # Clean up the install
 RUN yum -y remove wget tar unzip; yum clean all
@@ -74,5 +70,5 @@ RUN yum -y remove wget tar unzip; yum clean all
 RUN useradd jetty -U -s /bin/false \
     && chown -R jetty:root /opt/jetty \
     && chown -R jetty:root /opt/iam-jetty-base \
-    && chown -R jetty:root /opt/shibboleth-idp/logs
+    && chown -R jetty:root /opt/shibboleth-idp
 
