@@ -1,0 +1,73 @@
+# General messages related to terms of use consent.
+
+idp.terms-of-use.accept     = I accept the terms of use
+idp.terms-of-use.submit     = Submit
+idp.terms-of-use.reject     = Refuse
+idp.terms-of-use.required   = Please check this box if you want to proceed.
+
+# Triples consisting of a TOU key, and a title and text for each set of terms.
+# The default implementation uses the SP name as the key, but this can be overriden.
+
+https\://sp.example.org = example-tou-1
+example-tou-1.title = Example Terms of Use
+example-tou-1.text	= <em>*** This is an example ToU - tailor due to your needs ***</em> \
+                        <p>Example organization AAI services: Terms of Use (ToU)</p> \
+                        <strong>A. Data Protection Sample Clause</strong> \
+                        <p> \
+                        "The End User notes that personal data about the End User is compiled from generally \
+                        available sources and from communications received from the End User and other \
+                        Universities as well as from off-site sources. The policy relating to the use and procession \
+                        of such data is posted on the University website at [...]. Such data will be used, inter alia, \
+                        to authenticate and authorize the access to and use of various resources within \
+                        the University and on other sites ("Approved Uses"). The End User hereby consents to \
+                        the collection, processing, use and release of such data to the extent reasonably necessary \
+                        for the Approved Uses. Such consent includes, but is not limited to, the release \
+                        of personal data to other institutions by employing cookies and electronically exchanging, \
+                        caching and storing personal authorization attributes." \
+                        </p> \
+                        <strong>B. Limitation of Liability</strong> \
+                        <p> \
+                        "To the extent permitted by the applicable law, the End User hereby waives all and any \
+                        claims for cost and damages, whether direct or indirect, incidental, or consequential(including, \
+                        inter alia, loss of use and lost profits), both in contract and in tort, arising from \
+                        the use or in any way related to the inter-organizational authentication and authorization \
+                        services which allow the End User to access certain resources of other organizations. \
+                        This waiver of claims shall be valid and effective in relation to all participants of \
+                        the inter-organizational authentication and authorization services including the AAI \
+                        Service Provider and its affiliates, officers, employees and agents." \
+                        </p>
+
+# Messages related to attribute release consent.
+
+idp.attribute-release.revoke			   = Remover permissões de acesso a informação fornecidas para este serviço.
+
+idp.attribute-release.title                        = Liberação de Informações
+
+idp.attribute-release.attributesHeader             = Informações a serem liberadas para este serviço
+
+idp.attribute-release.serviceNameLabel             = Você irá liberar os seguintes acessos:
+idp.attribute-release.of                           = de
+idp.attribute-release.serviceDescriptionLabel      = Descrição fornecida pelo serviço:
+
+idp.attribute-release.informationURLLabel          = Informações adicionais sobre o serviço
+idp.attribute-release.privacyStatementURLLabel     = Informações sobre privacidade
+
+idp.attribute-release.showDetails                  = exibir detalhes
+
+idp.attribute-release.accept                       = Aceitar
+idp.attribute-release.reject                       = Rejeitar
+
+idp.attribute-release.confirmationQuestion         = As informações acima serão compartilhadas com o serviço se você prosseguir. \
+                                                     Do you agree to release this information to the service every time you access it?
+
+idp.attribute-release.consentMethod                = Selecione a duração da liberação de informações:
+idp.attribute-release.consentMethodRevoke          = This setting can be revoked at any time with the checkbox on the login page.
+
+idp.attribute-release.doNotRememberConsent         = Pergunte-me novamente no próximo login
+idp.attribute-release.doNotRememberConsentItem     = Eu aceito enviar minhas informações apenas neste momento.
+
+idp.attribute-release.rememberConsent              = Pergunte-me novamente caso hajam alterações
+idp.attribute-release.rememberConsentItem          = I agree that the same information will be sent automatically to this service in the future.
+
+idp.attribute-release.globalConsent                = Não me pergunte novamente
+idp.attribute-release.globalConsentItem            = I agree that <strong>all</strong> of my information will be released to <strong>any</strong> service.
