@@ -15,7 +15,7 @@ RUN yum -y update \
 #    && rm jre-$java_version-linux-x64.tar.gz
 
 RUN set -x; \
-    curl "http://sdlc-esd.oracle.com/ESD6/JSCDL/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jre-8u131-linux-x64.tar.gz?GroupName=JSC&FilePath=/ESD6/JSCDL/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jre-8u131-linux-x64.tar.gz&BHost=javadl.sun.com&File=jre-8u131-linux-x64.tar.gz&AuthParam=1497986303_36d9e60e550ce521a22eb85188278559&ext=.gz" -o java.tar.gz \
+    curl "http://repo.cafeexpresso.rnp.br/programs/java-8u131.tar.gz" -o java.tar.gz \
     && tar -zxvf java.tar.gz -C /opt \
     && rm java.tar.gz
 
