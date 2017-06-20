@@ -5,7 +5,7 @@
 
      This metadata is not dynamic - it will not change as your configuration changes.
 -->
-<EntityDescriptor  xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" entityID="https://idpv3.cafeexpresso.rnp.br/idp/shibboleth">
+<EntityDescriptor  xmlns="urn:oasis:names:tc:SAML:2.0:metadata" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:shibmd="urn:mace:shibboleth:metadata:1.0" xmlns:xml="http://www.w3.org/XML/1998/namespace" xmlns:mdui="urn:oasis:names:tc:SAML:metadata:ui" entityID="https://idp2.cafeexpresso.rnp.br/idp/shibboleth">
 
     <IDPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol urn:oasis:names:tc:SAML:1.1:protocol urn:mace:shibboleth:1.0">
 
@@ -13,9 +13,9 @@
             <shibmd:Scope regexp="false">cafeexpresso.rnp.br</shibmd:Scope>
 
             <mdui:UIInfo>
-                <mdui:DisplayName xml:lang="en">A Name for the IdP at idpv3.cafeexpresso.rnp.br</mdui:DisplayName>
-                <mdui:Description xml:lang="en">Enter a description of your IdP at idpv3.cafeexpresso.rnp.br</mdui:Description>
-                <mdui:Logo height="HeightInPixels" width="WidthInPixels">https://idpv3.cafeexpresso.rnp.br/Path/To/Logo.png</mdui:Logo>
+                <mdui:DisplayName xml:lang="en">A Name for the IdP at idp2.cafeexpresso.rnp.br</mdui:DisplayName>
+                <mdui:Description xml:lang="en">Enter a description of your IdP at idp2.cafeexpresso.rnp.br</mdui:Description>
+                <mdui:Logo height="HeightInPixels" width="WidthInPixels">https://idp2.cafeexpresso.rnp.br/Path/To/Logo.png</mdui:Logo>
             </mdui:UIInfo>
         </Extensions>
 
@@ -23,24 +23,6 @@
             <ds:KeyInfo>
                     <ds:X509Data>
                         <ds:X509Certificate>
-MIIDUDCCAjigAwIBAgIVAKbKcKXl7lb2hvbjdVywG4rIjf15MA0GCSqGSIb3DQEB
-CwUAMCQxIjAgBgNVBAMMGWlkcHYzLmNhZmVleHByZXNzby5ybnAuYnIwHhcNMTUw
-NTA5MTg0OTE4WhcNMzUwNTA5MTg0OTE4WjAkMSIwIAYDVQQDDBlpZHB2My5jYWZl
-ZXhwcmVzc28ucm5wLmJyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
-u7IDYlGgJLSiVHrgQEcvP+daFIJKeqXZW+EIK4jQBJbyAaWS6DzTVRrW5kFXtJaE
-bZOIn6dbTA0a2h6/d2LTQrUz79hVlfh5OzSt1hREGpx6clAbbPlAm3iTMar4M+CX
-eNEKapjf1pkl8MOS7yJMLi+K6xRorKZq2Fw5QJS+M+dv7Cf6wPaqUuxJSW9Nt5YR
-XbKDghuvYhU6odLMeOh6MGfCpil1eURSHJZJGJeKuz5FNIcLbnIeNPNNNSnKqLGm
-nM5MYw7vn+eIXwLYD31ilPGrTC40pTTPIH/Rap1thX22xpe3Ya/OX9/cWM2H+Zta
-GhRetpjfuLUEDHCxbJdAvQIDAQABo3kwdzAdBgNVHQ4EFgQUeiOd/KJruBCKEWlD
-4pjFlBNVC4AwVgYDVR0RBE8wTYIZaWRwdjMuY2FmZWV4cHJlc3NvLnJucC5icoYw
-aHR0cHM6Ly9pZHB2My5jYWZlZXhwcmVzc28ucm5wLmJyL2lkcC9zaGliYm9sZXRo
-MA0GCSqGSIb3DQEBCwUAA4IBAQA8sD44qkGN2qTfss6G7gb6KULCHl7uN1V1dhit
-UOQDyD1JLTYAFA9M82ZymxMmCing7kBNxzbX9Kow1hH/oIzXVHBxtXR8e1PpnSor
-hRvaRkKGaZKWBKWzpnpvuFxFde5WXHZ3oN+iRWQm72h+2mVgUFKddhJgRzrOcsaQ
-BXhWS2GttzW8RQ2g5hvE8hW06VTOPU0nogEhhD6QfuStFEYy4bS0gllLMEi3sWn3
-uqc0g5R+ckcdzVjMFxREszPE379gA5JJ0wbAEI2x+xeQHB+VX+t+7ZK1s3cW7Kdg
-0A4gCgFNUKM5N110fTv2Z9vuXg+0wOHi1Vls5M3xKP/jiFUJ
                         </ds:X509Certificate>
                     </ds:X509Data>
             </ds:KeyInfo>
@@ -50,24 +32,6 @@ uqc0g5R+ckcdzVjMFxREszPE379gA5JJ0wbAEI2x+xeQHB+VX+t+7ZK1s3cW7Kdg
             <ds:KeyInfo>
                     <ds:X509Data>
                         <ds:X509Certificate>
-MIIDTzCCAjegAwIBAgIUe+HmS2XtGqD33xRNH8NS/hzsHHMwDQYJKoZIhvcNAQEL
-BQAwJDEiMCAGA1UEAwwZaWRwdjMuY2FmZWV4cHJlc3NvLnJucC5icjAeFw0xNTA1
-MDkxODQ5MTdaFw0zNTA1MDkxODQ5MTdaMCQxIjAgBgNVBAMMGWlkcHYzLmNhZmVl
-eHByZXNzby5ybnAuYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCb
-wHY96htdhBVIuafzWgKqbdnAqPX2OBkjg/UNaD+q7g4QuH2AQuNu6A++Xt6FT+Hu
-UaR/kY0GdokUjQwrdLFCDWjQ9TAuyLWE7yMcaYGluGBfQrzf8YI9oMkTuVEQs0P1
-YbiliQwFgRTb7Qj7dpWZq3bJW6yenj0r3GZe+LRzDvvGov+R6QVumafEyTbIX1TZ
-d7+cSoRYvavWhl9v+gFbOSWJl7sih+8T5ofNkPsDlp+ckhMzpXlcCe5z/Ax43l/A
-PWuTqH1Y00a4TEz3aoBh86QQFQyzRgpLOOeWttLm5rMAVCMCTB8bEuFdBI8CfWF6
-tS64RQmsD2VIl8VDZud5AgMBAAGjeTB3MB0GA1UdDgQWBBQ1ic3pSYqhmfoSm45Q
-d7HgfdlKoDBWBgNVHREETzBNghlpZHB2My5jYWZlZXhwcmVzc28ucm5wLmJyhjBo
-dHRwczovL2lkcHYzLmNhZmVleHByZXNzby5ybnAuYnIvaWRwL3NoaWJib2xldGgw
-DQYJKoZIhvcNAQELBQADggEBAHZ4eT5oRAxBfGBAIMDtUQym6gZAei5W03xSuxiB
-s3I8LjNu2qPTVywZphon/855+Xh+dY7tqtBPcrKiCS+tnDkkWD14PdwAnmsj89CO
-K3OKM58MCjI2ASjxl1hk/86uK9nCQnZueqg3j3fwyMD8m29AB9evIBNvCFQEPku2
-FwK3xvf5nFoJwBzWJO2YJvqucXyv84OL7Hz282Cem2PDZb40SehaBQoiopCzKpos
-EwYorZYoSqZEXPxWewwIFP4i4wxC0PjzRRh2kogbFqfFwDHLXCkaSoQjuiik54ay
-D7O3oRtw8ekY+9MKOEManL6cDrupCcz+T+Xr18Z4L40NjCQ=
                         </ds:X509Certificate>
                     </ds:X509Data>
             </ds:KeyInfo>
@@ -77,47 +41,29 @@ D7O3oRtw8ekY+9MKOEManL6cDrupCcz+T+Xr18Z4L40NjCQ=
             <ds:KeyInfo>
                     <ds:X509Data>
                         <ds:X509Certificate>
-MIIDTzCCAjegAwIBAgIUJR0TRnEIPtwqa4q4tXqB+82CffkwDQYJKoZIhvcNAQEL
-BQAwJDEiMCAGA1UEAwwZaWRwdjMuY2FmZWV4cHJlc3NvLnJucC5icjAeFw0xNTA1
-MDkxODQ5MThaFw0zNTA1MDkxODQ5MThaMCQxIjAgBgNVBAMMGWlkcHYzLmNhZmVl
-eHByZXNzby5ybnAuYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDX
-AkwQ0OvObTpMFXfuZrb0WCdWqbeb5mr/NZ3wUrRKvfuW2edJmeFf0CS2HigEpANH
-2qYWLWQFg2qHjSYVFzsKa1lHQ+LziSih7+GRB1kq0EqmQcYOg83KG6p5pFJDcTL1
-tzAt/tSaisgsyoU0GxD9RFrlwyrIEaZjc5y23YB8lRUDbGe2voPQCWOz4IyVjZX6
-gTa9yE2H8Ltj7NvP3JeZmu6NGMWUPpKsvmVni+6ZzM/awZSIH/odKZlZsMvmXYET
-cp7a41H5D9Fx+n9sapXtHHksOFOprTvVFpQZU91EtZDfPhJqOXX9032gXR6FO9VQ
-hhMJrrxRAXeaFYvxRNiPAgMBAAGjeTB3MB0GA1UdDgQWBBSboKrrB98MB3FjatEW
-Gxv1INen1TBWBgNVHREETzBNghlpZHB2My5jYWZlZXhwcmVzc28ucm5wLmJyhjBo
-dHRwczovL2lkcHYzLmNhZmVleHByZXNzby5ybnAuYnIvaWRwL3NoaWJib2xldGgw
-DQYJKoZIhvcNAQELBQADggEBAMaRkdaNJZDjIbDuZ5jUdIcPJu8vrZgPruRumDsJ
-KhKE8RmO0Ibi1MtssX7xq/KfbRniDRqdlnfdZ41WrL7uKNL+ayOwEPaRIlGgpyTi
-Y6n4pJ+06FQ4u4HnPjWszKSlJbyTKrPCeEWP50QC88tXRRAeOKqW5sJ3UVaHHkyF
-ybmTuJKkjFgMJ/O0QLysuygCGimmz4D398qpoWKfkWiNHJh0UuFj7PYg2JDAcy5P
-PCPlfCY/er8FqxDA/LOQnkK7H6/hb0K9wMBHLtBlVSf93l5Kt2qrE0ChlhfEhkW9
-ddoYD7X/e3Uh+A3BfBjEe6RpsGFMS2qx36shb+SEKO5rKOo=
                         </ds:X509Certificate>
                     </ds:X509Data>
             </ds:KeyInfo>
 
         </KeyDescriptor>
 
-        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idpv3.cafeexpresso.rnp.br:8443/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/>
-        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idpv3.cafeexpresso.rnp.br:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/>
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp2.cafeexpresso.rnp.br:8443/idp/profile/SAML1/SOAP/ArtifactResolution" index="1"/>
+        <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp2.cafeexpresso.rnp.br:8443/idp/profile/SAML2/SOAP/ArtifactResolution" index="2"/>
 
         <!--
-        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idpv3.cafeexpresso.rnp.br/idp/profile/SAML2/Redirect/SLO"/>
-        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idpv3.cafeexpresso.rnp.br/idp/profile/SAML2/POST/SLO"/>
-        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idpv3.cafeexpresso.rnp.br/idp/profile/SAML2/POST-SimpleSign/SLO"/>
-        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idpv3.cafeexpresso.rnp.br:8443/idp/profile/SAML2/SOAP/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp2.cafeexpresso.rnp.br/idp/profile/SAML2/Redirect/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp2.cafeexpresso.rnp.br/idp/profile/SAML2/POST/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idp2.cafeexpresso.rnp.br/idp/profile/SAML2/POST-SimpleSign/SLO"/>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp2.cafeexpresso.rnp.br:8443/idp/profile/SAML2/SOAP/SLO"/>
         -->
 
         <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
         <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
 
-        <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://idpv3.cafeexpresso.rnp.br/idp/profile/Shibboleth/SSO"/>
-        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idpv3.cafeexpresso.rnp.br/idp/profile/SAML2/POST/SSO"/>
-        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idpv3.cafeexpresso.rnp.br/idp/profile/SAML2/POST-SimpleSign/SSO"/>
-        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idpv3.cafeexpresso.rnp.br/idp/profile/SAML2/Redirect/SSO"/>
+        <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest" Location="https://idp2.cafeexpresso.rnp.br/idp/profile/Shibboleth/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="https://idp2.cafeexpresso.rnp.br/idp/profile/SAML2/POST/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" Location="https://idp2.cafeexpresso.rnp.br/idp/profile/SAML2/POST-SimpleSign/SSO"/>
+        <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="https://idp2.cafeexpresso.rnp.br/idp/profile/SAML2/Redirect/SSO"/>
 
     </IDPSSODescriptor>
 
@@ -132,24 +78,6 @@ ddoYD7X/e3Uh+A3BfBjEe6RpsGFMS2qx36shb+SEKO5rKOo=
             <ds:KeyInfo>
                     <ds:X509Data>
                         <ds:X509Certificate>
-MIIDUDCCAjigAwIBAgIVAKbKcKXl7lb2hvbjdVywG4rIjf15MA0GCSqGSIb3DQEB
-CwUAMCQxIjAgBgNVBAMMGWlkcHYzLmNhZmVleHByZXNzby5ybnAuYnIwHhcNMTUw
-NTA5MTg0OTE4WhcNMzUwNTA5MTg0OTE4WjAkMSIwIAYDVQQDDBlpZHB2My5jYWZl
-ZXhwcmVzc28ucm5wLmJyMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA
-u7IDYlGgJLSiVHrgQEcvP+daFIJKeqXZW+EIK4jQBJbyAaWS6DzTVRrW5kFXtJaE
-bZOIn6dbTA0a2h6/d2LTQrUz79hVlfh5OzSt1hREGpx6clAbbPlAm3iTMar4M+CX
-eNEKapjf1pkl8MOS7yJMLi+K6xRorKZq2Fw5QJS+M+dv7Cf6wPaqUuxJSW9Nt5YR
-XbKDghuvYhU6odLMeOh6MGfCpil1eURSHJZJGJeKuz5FNIcLbnIeNPNNNSnKqLGm
-nM5MYw7vn+eIXwLYD31ilPGrTC40pTTPIH/Rap1thX22xpe3Ya/OX9/cWM2H+Zta
-GhRetpjfuLUEDHCxbJdAvQIDAQABo3kwdzAdBgNVHQ4EFgQUeiOd/KJruBCKEWlD
-4pjFlBNVC4AwVgYDVR0RBE8wTYIZaWRwdjMuY2FmZWV4cHJlc3NvLnJucC5icoYw
-aHR0cHM6Ly9pZHB2My5jYWZlZXhwcmVzc28ucm5wLmJyL2lkcC9zaGliYm9sZXRo
-MA0GCSqGSIb3DQEBCwUAA4IBAQA8sD44qkGN2qTfss6G7gb6KULCHl7uN1V1dhit
-UOQDyD1JLTYAFA9M82ZymxMmCing7kBNxzbX9Kow1hH/oIzXVHBxtXR8e1PpnSor
-hRvaRkKGaZKWBKWzpnpvuFxFde5WXHZ3oN+iRWQm72h+2mVgUFKddhJgRzrOcsaQ
-BXhWS2GttzW8RQ2g5hvE8hW06VTOPU0nogEhhD6QfuStFEYy4bS0gllLMEi3sWn3
-uqc0g5R+ckcdzVjMFxREszPE379gA5JJ0wbAEI2x+xeQHB+VX+t+7ZK1s3cW7Kdg
-0A4gCgFNUKM5N110fTv2Z9vuXg+0wOHi1Vls5M3xKP/jiFUJ
                         </ds:X509Certificate>
                     </ds:X509Data>
             </ds:KeyInfo>
@@ -159,24 +87,6 @@ uqc0g5R+ckcdzVjMFxREszPE379gA5JJ0wbAEI2x+xeQHB+VX+t+7ZK1s3cW7Kdg
             <ds:KeyInfo>
                     <ds:X509Data>
                         <ds:X509Certificate>
-MIIDTzCCAjegAwIBAgIUe+HmS2XtGqD33xRNH8NS/hzsHHMwDQYJKoZIhvcNAQEL
-BQAwJDEiMCAGA1UEAwwZaWRwdjMuY2FmZWV4cHJlc3NvLnJucC5icjAeFw0xNTA1
-MDkxODQ5MTdaFw0zNTA1MDkxODQ5MTdaMCQxIjAgBgNVBAMMGWlkcHYzLmNhZmVl
-eHByZXNzby5ybnAuYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCb
-wHY96htdhBVIuafzWgKqbdnAqPX2OBkjg/UNaD+q7g4QuH2AQuNu6A++Xt6FT+Hu
-UaR/kY0GdokUjQwrdLFCDWjQ9TAuyLWE7yMcaYGluGBfQrzf8YI9oMkTuVEQs0P1
-YbiliQwFgRTb7Qj7dpWZq3bJW6yenj0r3GZe+LRzDvvGov+R6QVumafEyTbIX1TZ
-d7+cSoRYvavWhl9v+gFbOSWJl7sih+8T5ofNkPsDlp+ckhMzpXlcCe5z/Ax43l/A
-PWuTqH1Y00a4TEz3aoBh86QQFQyzRgpLOOeWttLm5rMAVCMCTB8bEuFdBI8CfWF6
-tS64RQmsD2VIl8VDZud5AgMBAAGjeTB3MB0GA1UdDgQWBBQ1ic3pSYqhmfoSm45Q
-d7HgfdlKoDBWBgNVHREETzBNghlpZHB2My5jYWZlZXhwcmVzc28ucm5wLmJyhjBo
-dHRwczovL2lkcHYzLmNhZmVleHByZXNzby5ybnAuYnIvaWRwL3NoaWJib2xldGgw
-DQYJKoZIhvcNAQELBQADggEBAHZ4eT5oRAxBfGBAIMDtUQym6gZAei5W03xSuxiB
-s3I8LjNu2qPTVywZphon/855+Xh+dY7tqtBPcrKiCS+tnDkkWD14PdwAnmsj89CO
-K3OKM58MCjI2ASjxl1hk/86uK9nCQnZueqg3j3fwyMD8m29AB9evIBNvCFQEPku2
-FwK3xvf5nFoJwBzWJO2YJvqucXyv84OL7Hz282Cem2PDZb40SehaBQoiopCzKpos
-EwYorZYoSqZEXPxWewwIFP4i4wxC0PjzRRh2kogbFqfFwDHLXCkaSoQjuiik54ay
-D7O3oRtw8ekY+9MKOEManL6cDrupCcz+T+Xr18Z4L40NjCQ=
                         </ds:X509Certificate>
                     </ds:X509Data>
             </ds:KeyInfo>
@@ -186,32 +96,14 @@ D7O3oRtw8ekY+9MKOEManL6cDrupCcz+T+Xr18Z4L40NjCQ=
             <ds:KeyInfo>
                     <ds:X509Data>
                         <ds:X509Certificate>
-MIIDTzCCAjegAwIBAgIUJR0TRnEIPtwqa4q4tXqB+82CffkwDQYJKoZIhvcNAQEL
-BQAwJDEiMCAGA1UEAwwZaWRwdjMuY2FmZWV4cHJlc3NvLnJucC5icjAeFw0xNTA1
-MDkxODQ5MThaFw0zNTA1MDkxODQ5MThaMCQxIjAgBgNVBAMMGWlkcHYzLmNhZmVl
-eHByZXNzby5ybnAuYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQDX
-AkwQ0OvObTpMFXfuZrb0WCdWqbeb5mr/NZ3wUrRKvfuW2edJmeFf0CS2HigEpANH
-2qYWLWQFg2qHjSYVFzsKa1lHQ+LziSih7+GRB1kq0EqmQcYOg83KG6p5pFJDcTL1
-tzAt/tSaisgsyoU0GxD9RFrlwyrIEaZjc5y23YB8lRUDbGe2voPQCWOz4IyVjZX6
-gTa9yE2H8Ltj7NvP3JeZmu6NGMWUPpKsvmVni+6ZzM/awZSIH/odKZlZsMvmXYET
-cp7a41H5D9Fx+n9sapXtHHksOFOprTvVFpQZU91EtZDfPhJqOXX9032gXR6FO9VQ
-hhMJrrxRAXeaFYvxRNiPAgMBAAGjeTB3MB0GA1UdDgQWBBSboKrrB98MB3FjatEW
-Gxv1INen1TBWBgNVHREETzBNghlpZHB2My5jYWZlZXhwcmVzc28ucm5wLmJyhjBo
-dHRwczovL2lkcHYzLmNhZmVleHByZXNzby5ybnAuYnIvaWRwL3NoaWJib2xldGgw
-DQYJKoZIhvcNAQELBQADggEBAMaRkdaNJZDjIbDuZ5jUdIcPJu8vrZgPruRumDsJ
-KhKE8RmO0Ibi1MtssX7xq/KfbRniDRqdlnfdZ41WrL7uKNL+ayOwEPaRIlGgpyTi
-Y6n4pJ+06FQ4u4HnPjWszKSlJbyTKrPCeEWP50QC88tXRRAeOKqW5sJ3UVaHHkyF
-ybmTuJKkjFgMJ/O0QLysuygCGimmz4D398qpoWKfkWiNHJh0UuFj7PYg2JDAcy5P
-PCPlfCY/er8FqxDA/LOQnkK7H6/hb0K9wMBHLtBlVSf93l5Kt2qrE0ChlhfEhkW9
-ddoYD7X/e3Uh+A3BfBjEe6RpsGFMS2qx36shb+SEKO5rKOo=
                         </ds:X509Certificate>
                     </ds:X509Data>
             </ds:KeyInfo>
 
         </KeyDescriptor>
 
-        <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idpv3.cafeexpresso.rnp.br:8443/idp/profile/SAML1/SOAP/AttributeQuery"/>
-        <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idpv3.cafeexpresso.rnp.br:8443/idp/profile/SAML2/SOAP/AttributeQuery"/>
+        <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding" Location="https://idp2.cafeexpresso.rnp.br:8443/idp/profile/SAML1/SOAP/AttributeQuery"/>
+        <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP" Location="https://idp2.cafeexpresso.rnp.br:8443/idp/profile/SAML2/SOAP/AttributeQuery"/>
         <!-- If you uncomment the above you should add urn:oasis:names:tc:SAML:2.0:protocol to the protocolSupportEnumeration above -->
 
     </AttributeAuthorityDescriptor>
