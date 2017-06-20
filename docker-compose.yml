@@ -8,10 +8,17 @@ services:
       context: ./idp
 
     volumes:
-      - "./idp/metadata:/opt/shibboleth-idp/metadata"
-      - "./idp/conf:/opt/shibboleth-idp/conf"
+      - "./idp/shibboleth-idp/conf:/opt/shibboleth-idp/conf"
+      - "./idp/shibboleth-idp/metadata:/opt/shibboleth-idp/metadata"
+      - "./idp/shibboleth-idp/credentials:/opt/shibboleth-idp/credentials"
+      - "./idp/shibboleth-idp/messages:/opt/shibboleth-idp/messages"
+      - "./idp/shibboleth-idp/flows:/opt/shibboleth-idp/flows"
+      - "./idp/shibboleth-idp/views:/opt/shibboleth-idp/views"
+      - "./idp/shibboleth-idp/edit-webapp/api:/opt/shibboleth-idp/edit-webapp/api"
+      - "./idp/shibboleth-idp/edit-webapp/css:/opt/shibboleth-idp/edit-webapp/css"
+      - "./idp/shibboleth-idp/edit-webapp/fonts:/opt/shibboleth-idp/edit-webapp/fonts"
+      - "./idp/shibboleth-idp/edit-webapp/images/:/opt/shibboleth-idp/edit-webapp/images"
       - "./idp/docker-entrypoint.sh:/docker-entrypoint.sh"
-
 
     entrypoint: ./docker-entrypoint.sh
 
@@ -19,10 +26,7 @@ services:
 
     ports:
       - "443:8443"
-
-    links:
-      - openldap
-  
+      - "80:8080"
 
   ldap:
     container_name : "ldap"

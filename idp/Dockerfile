@@ -6,17 +6,22 @@ RUN yum -y update \
     && yum -y install wget tar unzip which
 
 # Download Java, verify the hash, and install
+# RUN set -x; \
+#    java_version=8u131; \
+#    wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" \
+#    http://download.oracle.com/otn-pub/java/jdk/$java_version-b27/jre-$java_version-linux-x64.tar.gz \
+#    && echo "49dadecd043152b3b448288a35a4ee6f3845ce6395734bacc1eae340dff3cbf5  jre-$java_version-linux-x64.tar.gz" | sha256sum -c - \
+#    && tar -zxvf jre-$java_version-linux-x64.tar.gz -C /opt \
+#    && rm jre-$java_version-linux-x64.tar.gz
+
 RUN set -x; \
-    java_version=8u60; \
-    wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" \
-    http://download.oracle.com/otn-pub/java/jdk/$java_version-b27/jre-$java_version-linux-x64.tar.gz \
-    && echo "49dadecd043152b3b448288a35a4ee6f3845ce6395734bacc1eae340dff3cbf5  jre-$java_version-linux-x64.tar.gz" | sha256sum -c - \
-    && tar -zxvf jre-$java_version-linux-x64.tar.gz -C /opt \
-    && rm jre-$java_version-linux-x64.tar.gz
+    curl "http://sdlc-esd.oracle.com/ESD6/JSCDL/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jre-8u131-linux-x64.tar.gz?GroupName=JSC&FilePath=/ESD6/JSCDL/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jre-8u131-linux-x64.tar.gz&BHost=javadl.sun.com&File=jre-8u131-linux-x64.tar.gz&AuthParam=1497986303_36d9e60e550ce521a22eb85188278559&ext=.gz" -o java.tar.gz \
+    && tar -zxvf java.tar.gz -C /opt \
+    && rm java.tar.gz
 
 # Download Jetty, verify the hash, and install, initialize a new base
-ENV JRE_HOME /opt/jre1.8.0_60
-ENV JAVA_HOME /opt/jre1.8.0_60
+ENV JRE_HOME /opt/jre1.8.0_131
+ENV JAVA_HOME /opt/jre1.8.0_131
 ENV JETTY_HOME /opt/jetty
 ENV JETTY_MAX_HEAP 512m
 ENV PATH $PATH:$JRE_HOME/bin
@@ -52,7 +57,7 @@ RUN set -x; \
     && echo "0c6747b28b1f76eb6fd1a1f2b9fce99c70e70be2e9ef0099f84a006673123027  shibboleth-identity-provider-$shibidp_version.zip" | sha256sum -c - \
     && unzip shibboleth-identity-provider-$shibidp_version.zip -d /opt \
     && cd /opt/shibboleth-identity-provider-$shibidp_version/ \
-    && bin/install.sh -Didp.keystore.password=admin@cafeexpresso -Didp.sealer.password=admin@cafeexpresso -Didp.host.name=sp1-openam.gidlab.rnp.br -Didp.target.dir=/opt/shibboleth-idp -Didp.entityID=https://sp1-openam.gidlab.rnp.br/idp/shibboleth \
+    && bin/install.sh -Didp.keystore.password=admin@cafeexpresso -Didp.sealer.password=admin@cafeexpresso -Didp.host.name=idp2.cafeexpresso.rnp.br -Didp.target.dir=/opt/shibboleth-idp -Didp.entityID=https://idp2.cafeexpresso.rnp.br/idp/shibboleth \
     && cd / \
     && chmod -R +r /opt/shibboleth-idp/ \
     && rm -r /shibboleth-identity-provider-$shibidp_version.zip /opt/shibboleth-identity-provider-$shibidp_version/
