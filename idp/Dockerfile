@@ -31,9 +31,7 @@ ENV JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD=admin@cafeexpresso
 COPY iam-jetty-base/ /opt/iam-jetty-base
 
 RUN set -x; \
-    jetty_version=9.3.3.v20150827; \
-    wget -O jetty.zip "https://eclipse.org/downloads/download.php?file=/jetty/$jetty_version/dist/jetty-distribution-$jetty_version.zip&r=1" \
-    && echo "2972a728bdfba8b1f32d2b4a109abcd7f0c00263  jetty.zip" | sha1sum -c - \
+    curl "http://repo.cafeexpresso.rnp.br/programs/jetty-9.3.3.zip" -o jetty.zip \
     && unzip jetty.zip -d /opt \
     && mv /opt/jetty-distribution-$jetty_version /opt/jetty \
     && rm jetty.zip \
@@ -44,28 +42,21 @@ RUN set -x; \
     && sed -i 's/# jetty.ssl.port=8443/jetty.ssl.port=8443/g' /opt/iam-jetty-base/start.d/ssl.ini \
     && sed -i 's/<New id="DefaultHandler" class="org.eclipse.jetty.server.handler.DefaultHandler"\/>/<New id="DefaultHandler" class="org.eclipse.jetty.server.handler.DefaultHandler"><Set name="showContexts">false<\/Set><\/New>/g' /opt/jetty/etc/jetty.xml
 
-# Download setuid, verify the hash, and place
 RUN set -x; \
-    wget https://repo1.maven.org/maven2/org/mortbay/jetty/libsetuid/8.1.9.v20130131/libsetuid-8.1.9.v20130131.so \
-    && echo "7286c7cb836126a403eb1c2c792bde9ce6018226  libsetuid-8.1.9.v20130131.so" | sha1sum -c - \
+    curl "http://repo.cafeexpresso.rnp.br/programs/libsetuid-8.1.9.v20130131.so" -o libsetuid-8.1.9.v20130131.so \
     && mv libsetuid-8.1.9.v20130131.so /opt/iam-jetty-base/lib/ext/
 
-# Download Shibboleth IdP, verify the hash, and install
 RUN set -x; \
-    shibidp_version=3.1.2; \
-    wget https://shibboleth.net/downloads/identity-provider/$shibidp_version/shibboleth-identity-provider-$shibidp_version.zip \
-    && echo "0c6747b28b1f76eb6fd1a1f2b9fce99c70e70be2e9ef0099f84a006673123027  shibboleth-identity-provider-$shibidp_version.zip" | sha256sum -c - \
-    && unzip shibboleth-identity-provider-$shibidp_version.zip -d /opt \
-    && cd /opt/shibboleth-identity-provider-$shibidp_version/ \
-    && bin/install.sh -Didp.keystore.password=foobar -Didp.sealer.password=foobar -Didp.host.name=idp2ampto.cafeexpresso.rnp.br -Didp.target.dir=/opt/shibboleth-idp -Didp.entityID=https://idp2ampto.cafeexpresso.rnp.br/idp/shibboleth \
+    curl "http://repo.cafeexpresso.rnp.br/programs/shibboleth-identity-provider-3.1.2.zip" -o shibboleth-identity-provider-3.1.2.zip \
+    && unzip shibboleth-identity-provider-3.1.2.zip -d /opt \
+    && cd /opt/shibboleth-identity-provider-3.1.2/ \
+    && bin/install.sh -Didp.keystore.password=admin@cafeexpresso -Didp.sealer.password=admin@cafeexpresso -Didp.host.name=idp2.cafeexpresso.rnp.br -Didp.target.dir=/opt/shibboleth-idp -Didp.entityID=https://idp2.cafeexpresso.rnp.br/idp/shibboleth \
     && cd / \
     && chmod -R +r /opt/shibboleth-idp/ \
-    && rm -r /shibboleth-identity-provider-$shibidp_version.zip /opt/shibboleth-identity-provider-$shibidp_version/
+    && rm -r /shibboleth-identity-provider-3.1.2.zip /opt/shibboleth-identity-provider-3.1.2/
 
-# Download the library to allow SOAP Endpoints, verify the hash, and place
 RUN set -x; \
-    wget https://build.shibboleth.net/nexus/content/repositories/releases/net/shibboleth/utilities/jetty9/jetty9-dta-ssl/1.0.0/jetty9-dta-ssl-1.0.0.jar \
-    && echo "2f547074b06952b94c35631398f36746820a7697  jetty9-dta-ssl-1.0.0.jar" | sha1sum -c - \
+    curl "http://repo.cafeexpresso.rnp.br/programs/jetty9-dta-ssl-1.0.0.jar" -o jetty9-dta-ssl-1.0.0.jar \
     && mv jetty9-dta-ssl-1.0.0.jar /opt/iam-jetty-base/lib/ext/
 
 
