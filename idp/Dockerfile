@@ -31,9 +31,7 @@ ENV JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD=admin@cafeexpresso
 COPY iam-jetty-base/ /opt/iam-jetty-base
 
 RUN set -x; \
-    jetty_version=9.3.3.v20150827; \
-    wget -O jetty.zip "https://eclipse.org/downloads/download.php?file=/jetty/$jetty_version/dist/jetty-distribution-$jetty_version.zip&r=1" \
-    && echo "2972a728bdfba8b1f32d2b4a109abcd7f0c00263  jetty.zip" | sha1sum -c - \
+    curl "http://repo.cafeexpresso.rnp.br/programs/jetty-9.3.3.zip" -o jetty.zip
     && unzip jetty.zip -d /opt \
     && mv /opt/jetty-distribution-$jetty_version /opt/jetty \
     && rm jetty.zip \
