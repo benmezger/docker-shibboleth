@@ -57,7 +57,7 @@ RUN set -x; \
     && echo "0c6747b28b1f76eb6fd1a1f2b9fce99c70e70be2e9ef0099f84a006673123027  shibboleth-identity-provider-$shibidp_version.zip" | sha256sum -c - \
     && unzip shibboleth-identity-provider-$shibidp_version.zip -d /opt \
     && cd /opt/shibboleth-identity-provider-$shibidp_version/ \
-    && bin/install.sh -Didp.keystore.password=admin@cafeexpresso -Didp.sealer.password=admin@cafeexpresso -Didp.host.name=idp2.cafeexpresso.rnp.br -Didp.target.dir=/opt/shibboleth-idp -Didp.entityID=https://idp2.cafeexpresso.rnp.br/idp/shibboleth \
+    && bin/install.sh -Didp.keystore.password=foobar -Didp.sealer.password=foobar -Didp.host.name=idp2ampto.cafeexpresso.rnp.br -Didp.target.dir=/opt/shibboleth-idp -Didp.entityID=https://idp2ampto.cafeexpresso.rnp.br/idp/shibboleth \
     && cd / \
     && chmod -R +r /opt/shibboleth-idp/ \
     && rm -r /shibboleth-identity-provider-$shibidp_version.zip /opt/shibboleth-identity-provider-$shibidp_version/
