@@ -47,18 +47,16 @@ RUN set -x; \
     && mv libsetuid-8.1.9.v20130131.so /opt/iam-jetty-base/lib/ext/
 
 RUN set -x; \
-    shibidp_version=3.1.2; \
     curl "http://repo.cafeexpresso.rnp.br/programs/shibboleth-identity-provider-3.1.2.zip" -o shibboleth-identity-provider-3.1.2.zip \
-    && unzip shibboleth-identity-provider-$shibidp_version.zip -d /opt \
-    && cd /opt/shibboleth-identity-provider-$shibidp_version/ \
+    && unzip shibboleth-identity-provider-3.1.2.zip -d /opt \
+    && cd /opt/shibboleth-identity-provider-3.1.2/ \
     && bin/install.sh -Didp.keystore.password=admin@cafeexpresso -Didp.sealer.password=admin@cafeexpresso -Didp.host.name=idp2.cafeexpresso.rnp.br -Didp.target.dir=/opt/shibboleth-idp -Didp.entityID=https://idp2.cafeexpresso.rnp.br/idp/shibboleth \
     && cd / \
     && chmod -R +r /opt/shibboleth-idp/ \
-    && rm -r /shibboleth-identity-provider-$shibidp_version.zip /opt/shibboleth-identity-provider-$shibidp_version/
+    && rm -r /shibboleth-identity-provider-3.1.2.zip /opt/shibboleth-identity-provider-3.1.2/
 
 RUN set -x; \
-    wget https://build.shibboleth.net/nexus/content/repositories/releases/net/shibboleth/utilities/jetty9/jetty9-dta-ssl/1.0.0/jetty9-dta-ssl-1.0.0.jar \
-    && echo "2f547074b06952b94c35631398f36746820a7697  jetty9-dta-ssl-1.0.0.jar" | sha1sum -c - \
+    curl "http://repo.cafeexpresso.rnp.br/programs/jetty9-dta-ssl-1.0.0.jar" -o jetty9-dta-ssl-1.0.0.jar \
     && mv jetty9-dta-ssl-1.0.0.jar /opt/iam-jetty-base/lib/ext/
 
 
