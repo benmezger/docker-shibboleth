@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<EntityDescriptor entityID="https://idp-fibre.cafeexpresso.rnp.br/idp/shibboleth"
+<EntityDescriptor entityID="https://idp2ampto.cafeexpresso.rnp.br/idp/shibboleth"
 		xmlns="urn:oasis:names:tc:SAML:2.0:metadata"
 		xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
 		xmlns:shibmd="urn:mace:shibboleth:metadata:1.0"
@@ -15,34 +15,51 @@
 	  <ds:KeyInfo>
 	      <ds:X509Data>
 		  <ds:X509Certificate>
-			changeme
+MIIDTzCCAjegAwIBAgIUe+HmS2XtGqD33xRNH8NS/hzsHHMwDQYJKoZIhvcNAQEL
+BQAwJDEiMCAGA1UEAwwZaWRwdjMuY2FmZWV4cHJlc3NvLnJucC5icjAeFw0xNTA1
+MDkxODQ5MTdaFw0zNTA1MDkxODQ5MTdaMCQxIjAgBgNVBAMMGWlkcHYzLmNhZmVl
+eHByZXNzby5ybnAuYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCb
+wHY96htdhBVIuafzWgKqbdnAqPX2OBkjg/UNaD+q7g4QuH2AQuNu6A++Xt6FT+Hu
+UaR/kY0GdokUjQwrdLFCDWjQ9TAuyLWE7yMcaYGluGBfQrzf8YI9oMkTuVEQs0P1
+YbiliQwFgRTb7Qj7dpWZq3bJW6yenj0r3GZe+LRzDvvGov+R6QVumafEyTbIX1TZ
+d7+cSoRYvavWhl9v+gFbOSWJl7sih+8T5ofNkPsDlp+ckhMzpXlcCe5z/Ax43l/A
+PWuTqH1Y00a4TEz3aoBh86QQFQyzRgpLOOeWttLm5rMAVCMCTB8bEuFdBI8CfWF6
+tS64RQmsD2VIl8VDZud5AgMBAAGjeTB3MB0GA1UdDgQWBBQ1ic3pSYqhmfoSm45Q
+d7HgfdlKoDBWBgNVHREETzBNghlpZHB2My5jYWZlZXhwcmVzc28ucm5wLmJyhjBo
+dHRwczovL2lkcHYzLmNhZmVleHByZXNzby5ybnAuYnIvaWRwL3NoaWJib2xldGgw
+DQYJKoZIhvcNAQELBQADggEBAHZ4eT5oRAxBfGBAIMDtUQym6gZAei5W03xSuxiB
+s3I8LjNu2qPTVywZphon/855+Xh+dY7tqtBPcrKiCS+tnDkkWD14PdwAnmsj89CO
+K3OKM58MCjI2ASjxl1hk/86uK9nCQnZueqg3j3fwyMD8m29AB9evIBNvCFQEPku2
+FwK3xvf5nFoJwBzWJO2YJvqucXyv84OL7Hz282Cem2PDZb40SehaBQoiopCzKpos
+EwYorZYoSqZEXPxWewwIFP4i4wxC0PjzRRh2kogbFqfFwDHLXCkaSoQjuiik54ay
+D7O3oRtw8ekY+9MKOEManL6cDrupCcz+T+Xr18Z4L40NjCQ=
 		  </ds:X509Certificate>
 	      </ds:X509Data>
 	  </ds:KeyInfo>
       </KeyDescriptor>
 
       <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding"
-				 Location="https://idp-fibre.cafeexpresso.rnp.br:8443/idp/profile/SAML1/SOAP/ArtifactResolution"
+				 Location="https://idp2ampto.cafeexpresso.rnp.br:8443/idp/profile/SAML1/SOAP/ArtifactResolution"
 				 index="1"/>
 
       <ArtifactResolutionService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
-				 Location="https://idp-fibre.cafeexpresso.rnp.br:8443/idp/profile/SAML2/SOAP/ArtifactResolution"
+				 Location="https://idp2ampto.cafeexpresso.rnp.br:8443/idp/profile/SAML2/SOAP/ArtifactResolution"
 				 index="2"/>
 
       <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
       <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
 
       <SingleSignOnService Binding="urn:mace:shibboleth:1.0:profiles:AuthnRequest"
-			   Location="https://idp-fibre.cafeexpresso.rnp.br/idp/profile/Shibboleth/SSO" />
+			   Location="https://idp2ampto.cafeexpresso.rnp.br/idp/profile/Shibboleth/SSO" />
 
       <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST"
-			   Location="https://idp-fibre.cafeexpresso.rnp.br/idp/profile/SAML2/POST/SSO" />
+			   Location="https://idp2ampto.cafeexpresso.rnp.br/idp/profile/SAML2/POST/SSO" />
 
       <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST-SimpleSign" 
-			   Location="https://idp-fibre.cafeexpresso.rnp.br/idp/profile/SAML2/POST-SimpleSign/SSO" />
+			   Location="https://idp2ampto.cafeexpresso.rnp.br/idp/profile/SAML2/POST-SimpleSign/SSO" />
 
       <SingleSignOnService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" 
-			   Location="https://idp-fibre.cafeexpresso.rnp.br/idp/profile/SAML2/Redirect/SSO" />
+			   Location="https://idp2ampto.cafeexpresso.rnp.br/idp/profile/SAML2/Redirect/SSO" />
   </IDPSSODescriptor>
 
   <AttributeAuthorityDescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:1.1:protocol urn:oasis:names:tc:SAML:2.0:protocol">
@@ -55,17 +72,34 @@
 	  <ds:KeyInfo>
 	      <ds:X509Data>
 		  <ds:X509Certificate>
-			changeme
+MIIDTzCCAjegAwIBAgIUe+HmS2XtGqD33xRNH8NS/hzsHHMwDQYJKoZIhvcNAQEL
+BQAwJDEiMCAGA1UEAwwZaWRwdjMuY2FmZWV4cHJlc3NvLnJucC5icjAeFw0xNTA1
+MDkxODQ5MTdaFw0zNTA1MDkxODQ5MTdaMCQxIjAgBgNVBAMMGWlkcHYzLmNhZmVl
+eHByZXNzby5ybnAuYnIwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIBAQCb
+wHY96htdhBVIuafzWgKqbdnAqPX2OBkjg/UNaD+q7g4QuH2AQuNu6A++Xt6FT+Hu
+UaR/kY0GdokUjQwrdLFCDWjQ9TAuyLWE7yMcaYGluGBfQrzf8YI9oMkTuVEQs0P1
+YbiliQwFgRTb7Qj7dpWZq3bJW6yenj0r3GZe+LRzDvvGov+R6QVumafEyTbIX1TZ
+d7+cSoRYvavWhl9v+gFbOSWJl7sih+8T5ofNkPsDlp+ckhMzpXlcCe5z/Ax43l/A
+PWuTqH1Y00a4TEz3aoBh86QQFQyzRgpLOOeWttLm5rMAVCMCTB8bEuFdBI8CfWF6
+tS64RQmsD2VIl8VDZud5AgMBAAGjeTB3MB0GA1UdDgQWBBQ1ic3pSYqhmfoSm45Q
+d7HgfdlKoDBWBgNVHREETzBNghlpZHB2My5jYWZlZXhwcmVzc28ucm5wLmJyhjBo
+dHRwczovL2lkcHYzLmNhZmVleHByZXNzby5ybnAuYnIvaWRwL3NoaWJib2xldGgw
+DQYJKoZIhvcNAQELBQADggEBAHZ4eT5oRAxBfGBAIMDtUQym6gZAei5W03xSuxiB
+s3I8LjNu2qPTVywZphon/855+Xh+dY7tqtBPcrKiCS+tnDkkWD14PdwAnmsj89CO
+K3OKM58MCjI2ASjxl1hk/86uK9nCQnZueqg3j3fwyMD8m29AB9evIBNvCFQEPku2
+FwK3xvf5nFoJwBzWJO2YJvqucXyv84OL7Hz282Cem2PDZb40SehaBQoiopCzKpos
+EwYorZYoSqZEXPxWewwIFP4i4wxC0PjzRRh2kogbFqfFwDHLXCkaSoQjuiik54ay
+D7O3oRtw8ekY+9MKOEManL6cDrupCcz+T+Xr18Z4L40NjCQ=
 		  </ds:X509Certificate>
 	      </ds:X509Data>
 	  </ds:KeyInfo>
       </KeyDescriptor>
 
       <AttributeService Binding="urn:oasis:names:tc:SAML:1.0:bindings:SOAP-binding"
-			Location="https://idp-fibre.cafeexpresso.rnp.br:8443/idp/profile/SAML1/SOAP/AttributeQuery" />
+			Location="https://idp2ampto.cafeexpresso.rnp.br:8443/idp/profile/SAML1/SOAP/AttributeQuery" />
 
       <AttributeService Binding="urn:oasis:names:tc:SAML:2.0:bindings:SOAP"
-			Location="https://idp-fibre.cafeexpresso.rnp.br:8443/idp/profile/SAML2/SOAP/AttributeQuery" />
+			Location="https://idp2ampto.cafeexpresso.rnp.br:8443/idp/profile/SAML2/SOAP/AttributeQuery" />
 
       <NameIDFormat>urn:mace:shibboleth:1.0:nameIdentifier</NameIDFormat>
       <NameIDFormat>urn:oasis:names:tc:SAML:2.0:nameid-format:transient</NameIDFormat>
@@ -73,15 +107,14 @@
   </AttributeAuthorityDescriptor>
 
   <Organization>
-      <OrganizationName xml:lang="en">changeme </OrganizationName>
-      <OrganizationDisplayName xml:lang="en"> changeme </OrganizationDisplayName>
+      <OrganizationName xml:lang="en">GTAmpto</OrganizationName>
+      <OrganizationDisplayName xml:lang="en">GTAmpto IdP</OrganizationDisplayName>
       <OrganizationURL xml:lang="en">http://www.rnp.br/</OrganizationURL>
   </Organization>
 
   <ContactPerson contactType="technical">
-     <SurName>changeme</SurName>
-     <EmailAddress>changeme</EmailAddress>
+     <SurName>Benjamin mezger</SurName>
+     <EmailAddress>me@benmezger.nl</EmailAddress>
   </ContactPerson>
-
 </EntityDescriptor>
 

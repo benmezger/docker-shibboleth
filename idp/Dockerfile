@@ -25,8 +25,8 @@ ENV JAVA_HOME /opt/jre1.8.0_131
 ENV JETTY_HOME /opt/jetty
 ENV JETTY_MAX_HEAP 512m
 ENV PATH $PATH:$JRE_HOME/bin
-ENV JETTY_BROWSER_SSL_KEYSTORE_PASSWORD=admin@cafeexpresso
-ENV JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD=admin@cafeexpresso
+ENV JETTY_BROWSER_SSL_KEYSTORE_PASSWORD=foobar
+ENV JETTY_BACKCHANNEL_SSL_KEYSTORE_PASSWORD=foobar
 
 COPY iam-jetty-base/ /opt/iam-jetty-base
 
@@ -50,7 +50,7 @@ RUN set -x; \
     curl "http://repo.cafeexpresso.rnp.br/programs/shibboleth-identity-provider-3.1.2.zip" -o shibboleth-identity-provider-3.1.2.zip \
     && unzip shibboleth-identity-provider-3.1.2.zip -d /opt \
     && cd /opt/shibboleth-identity-provider-3.1.2/ \
-    && bin/install.sh -Didp.keystore.password=admin@cafeexpresso -Didp.sealer.password=admin@cafeexpresso -Didp.host.name=idp2.cafeexpresso.rnp.br -Didp.target.dir=/opt/shibboleth-idp -Didp.entityID=https://idp2.cafeexpresso.rnp.br/idp/shibboleth \
+    && bin/install.sh -Didp.keystore.password=foobar -Didp.sealer.password=foobar -Didp.host.name=idp2ampto.cafeexpresso.rnp.br -Didp.target.dir=/opt/shibboleth-idp -Didp.entityID=https://idp2ampto.cafeexpresso.rnp.br/idp/shibboleth \
     && cd / \
     && chmod -R +r /opt/shibboleth-idp/ \
     && rm -r /shibboleth-identity-provider-3.1.2.zip /opt/shibboleth-identity-provider-3.1.2/
