@@ -10,7 +10,7 @@ services:
     volumes:
       - "./idp/shibboleth-idp/conf:/opt/shibboleth-idp/conf"
       - "./idp/shibboleth-idp/metadata:/opt/shibboleth-idp/metadata"
-      - "./idp/shibboleth-idp/credentials:/opt/shibboleth-idp/credentials"
+      # - "./idp/shibboleth-idp/credentials:/opt/shibboleth-idp/credentials"
       - "./idp/shibboleth-idp/messages:/opt/shibboleth-idp/messages"
       - "./idp/shibboleth-idp/flows:/opt/shibboleth-idp/flows"
       - "./idp/shibboleth-idp/views:/opt/shibboleth-idp/views"

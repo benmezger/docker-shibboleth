@@ -33,7 +33,7 @@ COPY iam-jetty-base/ /opt/iam-jetty-base
 RUN set -x; \
     curl "http://repo.cafeexpresso.rnp.br/programs/jetty-9.3.3.zip" -o jetty.zip \
     && unzip jetty.zip -d /opt \
-    && mv /opt/jetty-distribution-$jetty_version /opt/jetty \
+    && mv /opt/jetty-distribution-9.3.3.v20150827 /opt/jetty \
     && rm jetty.zip \
     && cp /opt/jetty/bin/jetty.sh /etc/init.d/jetty \
     && cd /opt/iam-jetty-base \
