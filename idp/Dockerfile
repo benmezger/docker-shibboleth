@@ -46,9 +46,10 @@ RUN set -x; \
     curl "http://repo.cafeexpresso.rnp.br/programs/libsetuid-8.1.9.v20130131.so" -o libsetuid-8.1.9.v20130131.so \
     && mv libsetuid-8.1.9.v20130131.so /opt/iam-jetty-base/lib/ext/
 
+COPY ./shibboleth-identity-provider-3.3.1.zip /
+
 RUN set -x; \
-    curl "https://shibboleth.net/downloads/identity-provider/latest/shibboleth-identity-provider-3.3.1.zip" -o shibboleth-identity-provider-3.3.1.zip \
-    && unzip shibboleth-identity-provider-3.3.1.zip -d /opt \
+    unzip shibboleth-identity-provider-3.3.1.zip -d /opt \
     && cd /opt/shibboleth-identity-provider-3.3.1/ \
     && bin/install.sh -Didp.keystore.password=foobar -Didp.sealer.password=foobar -Didp.host.name=idp2ampto.cafeexpresso.rnp.br -Didp.target.dir=/opt/shibboleth-idp -Didp.entityID=https://idp2ampto.cafeexpresso.rnp.br/idp/shibboleth \
     && cd / \
